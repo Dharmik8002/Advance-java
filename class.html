@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+
+  <script>
+    class Bank {
+      x = (details, pin) => {
+        let bankname = "Indian Bank";
+        let bankpin = 1234;
+        let bankifsc = "IBKL0001";
+        let bankbranch = "Vastral";
+        let bankbalance = 10000;
+        let bankaccount = 1234567890;
+
+        console.log("bankname: " + bankname);
+        console.log("bankpin: " + bankpin);
+        console.log("bankifsc: " + bankifsc);
+        console.log("bankbranch: " + bankbranch);
+        console.log("bankbalance: " + bankbalance);
+        console.log("bankaccount: " + bankaccount);
+      };
+
+      y = (pin, amount) => {
+        let bankbalance = 10000;
+        let bankpin = 1234;
+        if (bankpin == pin) {
+          if (bankbalance >= amount) {
+            bankbalance = bankbalance - amount;
+            console.log("Amount Withdrawn: " + amount);
+            console.log("Remaining Balance:" + bankbalance);
+          } else {
+            console.log("Insufficient Balance");
+          }
+        } else {
+          console.log("Invalid Pin");
+        }
+      };
+
+      Deposite = (pin, amount) => {
+        let bankbalance = 10000;
+        let bankpin = 1234;
+        if (bankpin == pin) {
+          bankbalance = bankbalance + amount;
+          console.log("Amount Deposited: " + amount);
+          console.log("Remaining Balance:" + bankbalance);
+        } else {
+          console.log("Invalid Pin");
+        }
+      };
+    }
+
+    let obj = new Bank();
+    console.log(obj);
+    obj.x("details", 1234);
+    obj.y(1234, 5000);
+    obj.Deposite(1234, 5000);
+  </script>
+</html>
